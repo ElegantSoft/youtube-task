@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Notes:
+  - Add README file with the steps of configuring your app and running it
+  - Use Git version to preview your project 
+  
+## Requirements:
+- Create SCALEABLE COMPONENT based on JavaScript By using Vue/React
+- Consider the project to be SCALEABLE
+- Create  responsive app
+- Don't use CSS frame works (Only CSS components)
+- use SASS and follow the guidelines mentioned bellow
 
-## Available Scripts
+- create a responsive YOUTUBE like app
+- head bar:
+  - in mobile it will be scrollable
+  - in desktop it will be fixed
 
-In the project directory, you can run:
+- the main page:
+  - is a search page /search?query={txt}
 
-### `yarn start`
+- in mobile:
+  - it will look like mbile1.png has header, filters, and body
+  - the header contains logo search text and search icon
+  - when u click on the search key the search text will convert to search input like in search-control.png
+  - the loading will be like the mobile-loading-state.png
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- in desktop:
+  - it will looks like desktop-view.png/ desktop-view-1.png
+  - the heder is fixed when scrolling
+  - the header has the logo and the search controllers
+  - the second header had the results count and the filters button
+  - when u search (write in textbox and press enter or click the search button) the loading bar will appear like in desktop-loading.png
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+use youtube Apis:
+the search Api https://developers.google.com/youtube/v3/docs/search/list
 
-### `yarn test`
+### Preferred:
+- Use git and the make sure the commit messages makesense
+- try to use css and js linters, be consistent in the way of writing your code
+- Use Flux Arch
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Guidelines
+- BEM,& SCSS in writing you scss code.
+- css guideline:
+  - http://cssguidelin.es/.
+- js guidelines:
+  - https://github.com/airbnb/javascript/tree/master/es5
