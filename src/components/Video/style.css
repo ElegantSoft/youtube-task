@@ -11,6 +11,11 @@
 .video .thumb {
   height: 150px;
   margin-right: -24px;
+  min-height: 150px;
+  min-width: 266px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .video .thumb img {
@@ -69,6 +74,8 @@
 @media (max-width: 767px) {
   .thumb {
     height: 100px !important;
+    min-height: 100px !important;
+    min-width: 177px !important;
   }
   .description {
     display: none;

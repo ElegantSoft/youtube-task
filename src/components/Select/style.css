@@ -28,8 +28,8 @@ select::-ms-expand {
   margin-right: 10px;
   border: 1px solid #e1e1e1;
   width: 150px;
-  height: 2.5em;
-  line-height: 2.5;
+  height: 2em;
+  line-height: 2;
   background: #f6f6f6;
   overflow: hidden;
   border-radius: 0.25em;
