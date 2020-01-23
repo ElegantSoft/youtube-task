@@ -1,0 +1,25 @@
+.loader {
+  max-width: 500px;
+  padding-top: 50px;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding-top: 61px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

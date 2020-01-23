@@ -1,0 +1,15 @@
+.loader {
+  max-width: 500px;
+  padding-top: 50px;
+}
+.content {
+  display: flex;
+  flex: 1;
+  min-height: 100%;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .content {
+    padding-top: 61px;
+  }
+}

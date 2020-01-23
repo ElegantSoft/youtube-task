@@ -10,11 +10,10 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: 10px 20px;
+  padding: 10px 0 10px 0;
   position: fixed;
-  left: 0;
-  right: 0;
   top: 0;
+  width: 100%;
 }
 
 .header .logo {
@@ -144,10 +143,5 @@
   .header-mobile {
     display: none;
   }
-}
-
-.loader {
-  max-width: 500px;
-  padding-top: 50px;
 }
 /*# sourceMappingURL=style.css.map */
