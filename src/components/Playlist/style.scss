@@ -1,11 +1,11 @@
-.video {
+.playlist {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
 
   .thumb {
     height: 150px;
-    margin-right: -24px;
+    margin-right: -90px;
     min-height: 150px;
     min-width: 266px;
     // background-color: #e1e1e1;
@@ -75,5 +75,33 @@
   }
   .description {
     display: none;
+  }
+  .hover {
+    background-color: #333;
+    height: 75px !important;
+    width: 100px !important;
+    h3 {
+      color: #fff;
+      justify-self: center;
+      align-self: center;
+      font-size: 12px;
+    }
+  }
+}
+
+.hover {
+  background-color: #333;
+  height: 150px;
+  width: 100px;
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  opacity: 0.8;
+  right: 10px;
+  h3 {
+    color: #fff;
+    justify-self: center;
+    align-self: center;
   }
 }

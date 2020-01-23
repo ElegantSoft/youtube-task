@@ -1,1 +1,1 @@
-export { showLoading, hideLoading } from "./youtubeSearch";
+export { showLoading, hideLoading, search, changeQuery } from "./youtubeSearch";

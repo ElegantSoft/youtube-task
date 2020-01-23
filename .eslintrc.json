@@ -49,6 +49,7 @@
       "import/no-named-as-default":  "off",
       "react/prop-types":  "off",
       "no-param-reassign": "off",
+      "react/destructuring-assignment": "off",
       
 
   

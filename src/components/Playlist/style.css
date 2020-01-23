@@ -1,4 +1,4 @@
-.video {
+.playlist {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,9 +9,9 @@
   margin-bottom: 10px;
 }
 
-.video .thumb {
+.playlist .thumb {
   height: 150px;
-  margin-right: -24px;
+  margin-right: -90px;
   min-height: 150px;
   min-width: 266px;
   width: -webkit-fit-content;
@@ -19,11 +19,11 @@
   width: fit-content;
 }
 
-.video .thumb img {
+.playlist .thumb img {
   height: 100%;
 }
 
-.video .thumb span {
+.playlist .thumb span {
   position: relative;
   bottom: 10px;
   right: 40px;
@@ -34,7 +34,7 @@
   font-weight: 400;
 }
 
-.video .details {
+.playlist .details {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -47,18 +47,18 @@
           flex-direction: column;
 }
 
-.video .details h3 {
+.playlist .details h3 {
   color: #333;
   font-size: 16px;
   font-weight: 400;
   max-width: 80%;
 }
 
-.video .details h3.phone {
+.playlist .details h3.phone {
   display: none;
 }
 
-.video .details ul.info li {
+.playlist .details ul.info li {
   list-style: none;
   display: inline;
   font-size: 10px;
@@ -67,7 +67,7 @@
   font-weight: 300;
 }
 
-.video .details p {
+.playlist .details p {
   margin-top: 10px;
   font-size: 14px;
   color: #666;
@@ -93,5 +93,45 @@
   .description {
     display: none;
   }
+  .hover {
+    background-color: #333;
+    height: 75px !important;
+    width: 100px !important;
+  }
+  .hover h3 {
+    color: #fff;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-size: 12px;
+  }
+}
+
+.hover {
+  background-color: #333;
+  height: 150px;
+  width: 100px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0.8;
+  right: 10px;
+}
+
+.hover h3 {
+  color: #fff;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 /*# sourceMappingURL=style.css.map */

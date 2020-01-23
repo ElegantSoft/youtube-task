@@ -1,4 +1,4 @@
-.video {
+.channel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,7 +9,7 @@
   margin-bottom: 10px;
 }
 
-.video .thumb {
+.channel .thumb {
   height: 150px;
   margin-right: -24px;
   min-height: 150px;
@@ -19,11 +19,12 @@
   width: fit-content;
 }
 
-.video .thumb img {
+.channel .thumb img {
   height: 100%;
+  border-radius: 75px;
 }
 
-.video .thumb span {
+.channel .thumb span {
   position: relative;
   bottom: 10px;
   right: 40px;
@@ -34,7 +35,7 @@
   font-weight: 400;
 }
 
-.video .details {
+.channel .details {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -47,18 +48,18 @@
           flex-direction: column;
 }
 
-.video .details h3 {
+.channel .details h3 {
   color: #333;
   font-size: 16px;
   font-weight: 400;
   max-width: 80%;
 }
 
-.video .details h3.phone {
+.channel .details h3.phone {
   display: none;
 }
 
-.video .details ul.info li {
+.channel .details ul.info li {
   list-style: none;
   display: inline;
   font-size: 10px;
@@ -67,7 +68,7 @@
   font-weight: 300;
 }
 
-.video .details p {
+.channel .details p {
   margin-top: 10px;
   font-size: 14px;
   color: #666;

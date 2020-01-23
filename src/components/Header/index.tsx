@@ -1,40 +1,51 @@
-import React, { Component, ReactElement } from "react";
+import React, { ReactElement } from "react";
+import { connect } from "react-redux";
 import "./style.css";
+import { CentralState } from "src/redux/reducers";
 import Logo from "./Logo";
 import Search from "./Search";
 import HeaderMobile from "./HeaderMobile";
+import { changeQuery, search } from "../../redux/actions/youtubeSearch";
 
-interface State {
+interface Props {
   query: string;
+  changeQuery(query: string): void;
+  doSearch(): void;
 }
 
-export class Header extends Component<{}, State> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      query: "spongebob"
-    };
-  }
-
-  render(): ReactElement {
-    const { query } = this.state;
-    return (
-      <>
-        <div className="header elevation-1">
-          <div className="container">
-            <div className="logo">
-              <Logo />
-              <span>EG</span>
-            </div>
-            <div className="search-container">
-              <Search query={query} />
-            </div>
+const Header: React.FC<Props> = (props): ReactElement => {
+  return (
+    <>
+      <div className="header elevation-1">
+        <div className="container">
+          <div className="logo">
+            <Logo />
+            <span>EG</span>
+          </div>
+          <div className="search-container">
+            <Search
+              query={props.query}
+              changeQuery={props.changeQuery}
+              doSearch={props.doSearch}
+            />
           </div>
         </div>
-        <HeaderMobile query={query} />
-      </>
-    );
-  }
-}
+      </div>
+      <HeaderMobile
+        query={props.query}
+        changeQuery={props.changeQuery}
+        doSearch={props.doSearch}
+      />
+    </>
+  );
+};
 
-export default Header;
+const mapStateToProps = (state: CentralState): { query: string } => {
+  return {
+    query: state.youtube.query
+  };
+};
+
+export default connect(mapStateToProps, { changeQuery, doSearch: search })(
+  Header
+);

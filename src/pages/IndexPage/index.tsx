@@ -2,40 +2,37 @@ import React, { ReactElement } from "react";
 import Filter from "src/components/Filter";
 import VideoPlaceholder from "src/components/VideoPlaceholder";
 import Video from "src/components/Video";
+import Playlist from "src/components/Playlist";
 import Header from "src/components/Header";
-import ytApi from "src/utils/apis/youtube";
 import NProgress from "nprogress";
 import "./style.css";
 import { SearchItem } from "src/utils/interfaces/youtubeItem";
 import { connect } from "react-redux";
 import { CentralState } from "src/redux/reducers";
+import { search } from "src/redux/actions";
+import Channel from "src/components/Channel";
+// import { Action } from "src/redux/actions/youtubeSearch";
 
 interface Props {
   loading: boolean;
   items: Array<SearchItem>;
-}
-
-interface State {
   query: string;
+  search(query: string): void;
 }
 
-class IndexPage extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      query: ""
-    };
-  }
-
+class IndexPage extends React.Component<Props, {}> {
   componentDidMount(): void {
-    const { loading } = this.props;
-    this.search();
+    const { loading, query } = this.props;
+    // this.search();
     if (loading) {
       NProgress.start();
     }
+
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.search(query);
   }
 
-  componentDidUpdate(prevProps: Props, prevState: State): void {
+  componentDidUpdate(prevProps: Props): void {
     const { loading } = this.props;
     if (prevProps.loading !== loading) {
       if (loading) {
@@ -45,23 +42,6 @@ class IndexPage extends React.Component<Props, State> {
       }
     }
   }
-
-  /**
-   * get data by query
-   */
-
-  private search = async (): Promise<void> => {
-    try {
-      const response = await ytApi.get("/search", {
-        params: {
-          q: "spongebob"
-        }
-      });
-      console.log(response.data);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
 
   /**
    * render loader before get content
@@ -78,9 +58,29 @@ class IndexPage extends React.Component<Props, State> {
     return (
       <div className="content container">
         <Filter />
-        <Video />
+        {this.renderVideos()}
       </div>
     );
+  };
+
+  renderVideos = (): ReactElement => {
+    const { items } = this.props;
+    if (items) {
+      return (
+        <>
+          {items.map(item => {
+            if (item.id.kind.match(/video/i)) {
+              return <Video key={item.id.videoId} video={item} />;
+            }
+            if (item.id.kind.match(/list/i)) {
+              return <Playlist key={item.id.videoId} video={item} />;
+            }
+            return <Channel key={item.id.videoId} video={item} />;
+          })}
+        </>
+      );
+    }
+    return <div />;
   };
 
   render(): ReactElement {
@@ -95,11 +95,18 @@ class IndexPage extends React.Component<Props, State> {
   }
 }
 
-const mapStateTopProps = (state: CentralState): Props => {
+interface MapStateTopProps {
+  loading: boolean;
+  items: SearchItem[];
+  query: string;
+}
+
+const mapStateTopProps = (state: CentralState): MapStateTopProps => {
   return {
     loading: state.youtube.loading,
-    items: state.youtube.items
+    items: state.youtube.items,
+    query: state.youtube.query
   };
 };
 
-export default connect(mapStateTopProps)(IndexPage);
+export default connect(mapStateTopProps, { search })(IndexPage);

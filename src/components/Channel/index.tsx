@@ -6,13 +6,12 @@ interface Props {
   video: SearchItem;
 }
 
-const Video: React.FC<Props> = ({ video }): ReactElement => {
+const Channel: React.FC<Props> = ({ video }): ReactElement => {
   return (
     <>
-      <div className="video">
+      <div className="channel">
         <div className="thumb">
           <img src={video.snippet.thumbnails.medium.url} alt="thumb" />
-          <span className="time">6:05</span>
         </div>
         <div className="details">
           <h3 className="web">{video.snippet.title}</h3>
@@ -35,4 +34,4 @@ const Video: React.FC<Props> = ({ video }): ReactElement => {
   );
 };
 
-export default Video;
+export default Channel;

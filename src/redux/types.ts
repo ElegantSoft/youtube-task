@@ -1,3 +1,5 @@
 export const SHOW_LOADING = "GET_SHOW_LOADING";
 export const HIDE_LOADING = "HIDE_LOADING";
 export const GET_SEARCH_RESULT = "GET_SEARCH_RESULT";
+export const CHANGE_QUERY = "CHANGE_QUERY";
+export const ADD_ITEMS = "ADD_ITEMS";

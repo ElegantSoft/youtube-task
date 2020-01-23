@@ -1,22 +1,27 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, ReactElement } from "react";
-import PropTypes from "prop-types";
 
 interface Props {
   query: string;
+  changeQuery(query: string): void;
+  doSearch(): void;
 }
 
-const HeaderMobile: React.FC<Props> = ({ query }) => {
+const HeaderMobile: React.FC<Props> = ({ query, changeQuery, doSearch }) => {
   const [isSearch, setIsSearch] = useState(false);
 
   const searchControl = (): ReactElement => {
     if (isSearch) {
       return (
         <div className="search-mobile-input">
-          <input type="text" value={query} />
+          <input
+            type="text"
+            value={query}
+            onChange={e => changeQuery(e.target.value)}
+          />
           <span onClick={(): void => setIsSearch(false)}>&#10005;</span>
-          <div className="search-btn">
+          <div className="search-btn" onClick={() => doSearch()}>
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13">
               <g strokeWidth="2" stroke="#fff" fill="none">
                 <path d="M11.33 11.71l-4-4" />
@@ -52,6 +57,3 @@ const HeaderMobile: React.FC<Props> = ({ query }) => {
 };
 
 export default HeaderMobile;
-HeaderMobile.propTypes = {
-  query: PropTypes.string.isRequired
-};
