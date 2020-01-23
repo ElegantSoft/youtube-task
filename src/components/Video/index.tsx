@@ -25,10 +25,7 @@ const Video: React.FC<Props> = ({ video }): ReactElement => {
             <li>54M views</li>
             <li>1 year ago</li>
           </ul>
-          <p className="description">
-            Sponge Bob is the testSponge Bob is the testSponge Bob is the
-            testSponge Bob is the test
-          </p>
+          <p className="description">{video.snippet.description}</p>
         </div>
       </div>
     </>
