@@ -7136,6 +7136,11 @@ npmlog@^4.0.2:
     gauge "~2.7.3"
     set-blocking "~2.0.0"
 
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
+
 nth-check@^1.0.2, nth-check@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/nth-check/-/nth-check-1.0.2.tgz#b2bd295c37e3dd58a3bf0700376663ba4d9cf05c"
@@ -8698,6 +8703,11 @@ react-app-polyfill@^1.0.5:
     raf "^3.4.1"
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
+
+react-content-loader@^4.3.4:
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-4.3.4.tgz#5060df47c5ed0a16c31a35169c4e6f69e96b39a8"
+  integrity sha512-wwpF6dWaqeaiIwA/NofTuuO7PQaXRxGkukcdrNK/oIKEkfU3BPkNFrCb6sk9Q5l9n5uN80RF60ZO53wzxSy2HQ==
 
 react-dev-utils@^10.0.0:
   version "10.0.0"
