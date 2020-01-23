@@ -22,4 +22,14 @@
     padding-top: 61px;
   }
 }
+
+@media (max-width: 676px) {
+  .body {
+    background-color: #fff;
+    margin: 0 10px 0 10px;
+    border-left: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+    min-height: 500px;
+  }
+}
 /*# sourceMappingURL=style.css.map */

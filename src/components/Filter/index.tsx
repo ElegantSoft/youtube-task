@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import Select from "../Select";
 
 const Filter: React.FC = () => {
   return (
@@ -11,7 +12,11 @@ const Filter: React.FC = () => {
         </p>
       </div>
       <div className="filter-mobile">
-        <p>mobile</p>
+        <Select title="All" choices={["Video", "Channel", "Playlist"]} />
+        <Select
+          title="Any time"
+          choices={["Last day", "last month", "Last year"]}
+        />
       </div>
     </>
   );

@@ -38,5 +38,12 @@
   }
   .filter-mobile {
     display: flex;
+    padding: 10px 0 10px 0;
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e1e1e1;
+    flex-direction: initial;
+    justify-content: flex-start;
   }
 }

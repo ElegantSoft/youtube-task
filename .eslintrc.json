@@ -47,6 +47,7 @@
       "import/extensions": ["warn", { "extensions": [".js", ".jsx", ".tsx", ".ts"] }],
       "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".tsx", ".ts"] }],
       "import/no-named-as-default":  "off",
+      "react/prop-types":  "off",
       
 
   
