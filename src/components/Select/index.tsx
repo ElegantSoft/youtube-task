@@ -11,10 +11,10 @@ interface Props {
 const Select: React.FC<Props> = ({ title, choices }): ReactElement => {
   return (
     <div className="select">
-      <select name="slct" id="slct">
-        <option selected>{title}</option>
+      <select name="slct" id="slct" defaultValue={title}>
+        <option value={title}>{title}</option>
         {choices.map((ch, i) => (
-          <option key={i.toString()} value={i}>
+          <option key={i.toString()} value={ch}>
             {ch}
           </option>
         ))}

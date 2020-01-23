@@ -48,6 +48,7 @@
       "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".tsx", ".ts"] }],
       "import/no-named-as-default":  "off",
       "react/prop-types":  "off",
+      "no-param-reassign": "off",
       
 
   
