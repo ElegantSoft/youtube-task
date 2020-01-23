@@ -4,22 +4,46 @@ import VideoPlaceholder from "src/components/VideoPlaceholder";
 import Video from "src/components/Video";
 import Header from "src/components/Header";
 import ytApi from "src/utils/apis/youtube";
+import NProgress from "nprogress";
 import "./style.css";
+import { SearchItem } from "src/utils/interfaces/youtubeItem";
+import { connect } from "react-redux";
+import { CentralState } from "src/redux/reducers";
 
-interface State {
-  loaded: boolean;
+interface Props {
+  loading: boolean;
+  items: Array<SearchItem>;
 }
 
-class IndexPage extends React.Component<{}, State> {
-  constructor(props: any) {
+interface State {
+  query: string;
+}
+
+class IndexPage extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
-      loaded: true
+      query: ""
     };
   }
 
   componentDidMount(): void {
+    const { loading } = this.props;
     this.search();
+    if (loading) {
+      NProgress.start();
+    }
+  }
+
+  componentDidUpdate(prevProps: Props, prevState: State): void {
+    const { loading } = this.props;
+    if (prevProps.loading !== loading) {
+      if (loading) {
+        NProgress.start();
+      } else {
+        NProgress.done();
+      }
+    }
   }
 
   /**
@@ -43,8 +67,8 @@ class IndexPage extends React.Component<{}, State> {
    * render loader before get content
    */
   renderContent = (): ReactElement => {
-    const { loaded } = this.state;
-    if (!loaded) {
+    const { loading } = this.props;
+    if (loading) {
       return (
         <div className="loader">
           <VideoPlaceholder />;
@@ -71,4 +95,11 @@ class IndexPage extends React.Component<{}, State> {
   }
 }
 
-export default IndexPage;
+const mapStateTopProps = (state: CentralState): Props => {
+  return {
+    loading: state.youtube.loading,
+    items: state.youtube.items
+  };
+};
+
+export default connect(mapStateTopProps)(IndexPage);
