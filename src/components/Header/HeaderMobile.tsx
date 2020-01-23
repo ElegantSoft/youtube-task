@@ -15,7 +15,7 @@ const HeaderMobile: React.FC<Props> = ({ query }) => {
       return (
         <div className="search-mobile-input">
           <input type="text" value={query} />
-          <span onClick={() => setIsSearch(false)}>&#10005;</span>
+          <span onClick={(): void => setIsSearch(false)}>&#10005;</span>
           <div className="search-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13">
               <g strokeWidth="2" stroke="#fff" fill="none">
@@ -30,7 +30,7 @@ const HeaderMobile: React.FC<Props> = ({ query }) => {
     return (
       <div className="search-mobile-input">
         <p className="query">{query}</p>
-        <div className="search-btn" onClick={() => setIsSearch(true)}>
+        <div className="search-btn" onClick={(): void => setIsSearch(true)}>
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13">
             <g strokeWidth="2" stroke="#fff" fill="none">
               <path d="M11.33 11.71l-4-4" />

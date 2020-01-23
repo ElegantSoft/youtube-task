@@ -1,7 +1,8 @@
 import React, { ReactElement } from "react";
-import VideoPlaceholder from "../../components/VideoPlaceholder";
-import Video from "../../components/Video";
-import Header from "../../components/Header";
+import Filter from "src/components/Filter";
+import VideoPlaceholder from "src/components/VideoPlaceholder";
+import Video from "src/components/Video";
+import Header from "src/components/Header";
 import "./style.css";
 
 interface State {
@@ -30,6 +31,7 @@ class IndexPage extends React.Component<{}, State> {
     }
     return (
       <div className="content container">
+        <Filter />
         <Video />
       </div>
     );

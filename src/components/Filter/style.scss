@@ -1,0 +1,42 @@
+.filter-web {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+  width: 100%;
+  padding: 15px 0 15px 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1;
+  align-items: space-between;
+  h3 {
+    font-size: 16px;
+    font-weight: 300;
+    color: #555;
+  }
+  p {
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #555;
+    i {
+      font-size: 17px;
+      margin-right: 10px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .filter-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .filter-web {
+    display: none;
+  }
+  .filter-mobile {
+    display: flex;
+  }
+}
