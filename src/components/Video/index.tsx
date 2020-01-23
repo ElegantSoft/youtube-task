@@ -1,7 +1,7 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import "./style.css";
 
-function Video() {
+const Video: React.FC = (): ReactElement => {
   return (
     <>
       <div className="video">
@@ -24,6 +24,6 @@ function Video() {
       </div>
     </>
   );
-}
+};
 
 export default Video;

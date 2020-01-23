@@ -1,7 +1,7 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
 
-function VideoPlaceholder() {
+const VideoPlaceholder: React.FC = () => {
   return (
     <ContentLoader
       width={400}
@@ -25,6 +25,6 @@ function VideoPlaceholder() {
       <rect x="192.84" y="350" rx="0" ry="0" width="89" height="9" />
     </ContentLoader>
   );
-}
+};
 
 export default VideoPlaceholder;

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
-function Logo() {
+function Logo(): ReactElement {
   return (
     <svg
       viewBox="0 0 200 60"

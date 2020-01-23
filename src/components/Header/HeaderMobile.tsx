@@ -1,12 +1,16 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from "react";
+import React, { useState, ReactElement } from "react";
 import PropTypes from "prop-types";
 
-function HeaderMobile({ query }) {
+interface Props {
+  query: string;
+}
+
+const HeaderMobile: React.FC<Props> = ({ query }) => {
   const [isSearch, setIsSearch] = useState(false);
 
-  const searchControl = () => {
+  const searchControl = (): ReactElement => {
     if (isSearch) {
       return (
         <div className="search-mobile-input">
@@ -45,7 +49,7 @@ function HeaderMobile({ query }) {
       </div>
     </div>
   );
-}
+};
 
 export default HeaderMobile;
 HeaderMobile.propTypes = {

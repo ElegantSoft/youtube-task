@@ -6,6 +6,11 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/node": "^13.1.8",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "@typescript-eslint/parser": "^2.17.0",
     "babel-eslint": "^10.0.3",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-react": "^1.1.7",
@@ -15,7 +20,8 @@
     "react": "^16.12.0",
     "react-content-loader": "^4.3.4",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "react-scripts": "3.3.0",
+    "typescript": "^3.7.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,6 +47,7 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
+    "eslint-import-resolver-ts": "^0.4.2",
     "eslint-loader": "^3.0.3",
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",

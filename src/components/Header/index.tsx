@@ -1,18 +1,22 @@
-import React, { Component } from "react";
+import React, { Component, ReactElement } from "react";
 import "./style.css";
 import Logo from "./Logo";
 import Search from "./Search";
 import HeaderMobile from "./HeaderMobile";
 
-export class Header extends Component {
-  constructor(props) {
+interface State {
+  query: string;
+}
+
+export class Header extends Component<{}, State> {
+  constructor(props: any) {
     super(props);
     this.state = {
       query: "spongebob"
     };
   }
 
-  render() {
+  render(): ReactElement {
     const { query } = this.state;
     return (
       <>

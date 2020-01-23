@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import IndexPage from "./pages/IndexPage";
 
 // NProgress.start();
 
-function App() {
+function App(): ReactElement {
   return <IndexPage />;
 }
 

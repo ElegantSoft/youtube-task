@@ -1,6 +1,10 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
-function Search() {
+interface Props {
+  query: string;
+}
+
+const Search: React.FC<Props> = (): ReactElement => {
   return (
     <div className="search">
       <input type="text" />
@@ -14,6 +18,6 @@ function Search() {
       </button>
     </div>
   );
-}
+};
 
 export default Search;

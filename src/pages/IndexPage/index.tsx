@@ -1,11 +1,15 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import VideoPlaceholder from "../../components/VideoPlaceholder";
 import Video from "../../components/Video";
 import Header from "../../components/Header";
 import "./style.css";
 
-class IndexPage extends React.Component {
-  constructor(props) {
+interface State {
+  loaded: boolean;
+}
+
+class IndexPage extends React.Component<{}, State> {
+  constructor(props: any) {
     super(props);
     this.state = {
       loaded: true
@@ -15,7 +19,7 @@ class IndexPage extends React.Component {
   /**
    * render loader before get content
    */
-  renderContent = () => {
+  renderContent = (): ReactElement => {
     const { loaded } = this.state;
     if (!loaded) {
       return (
@@ -31,7 +35,7 @@ class IndexPage extends React.Component {
     );
   };
 
-  render() {
+  render(): ReactElement {
     return (
       <>
         <div className="body">
