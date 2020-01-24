@@ -9,27 +9,39 @@ import "./style.css";
 import { SearchItem } from "src/utils/interfaces/youtubeItem";
 import { connect } from "react-redux";
 import { CentralState } from "src/redux/reducers";
-import { search } from "src/redux/actions";
+import { search, changeQuery } from "src/redux/actions";
 import Channel from "src/components/Channel";
+import queryString from "query-string";
 // import { Action } from "src/redux/actions/youtubeSearch";
 
 interface Props {
   loading: boolean;
   items: Array<SearchItem>;
   query: string;
-  search(query: string): void;
+  search(): void;
+  changeQuery(query: string): void;
+  location?: { search?: string };
 }
 
 class IndexPage extends React.Component<Props, {}> {
   componentDidMount(): void {
-    const { loading, query } = this.props;
+    const { loading } = this.props;
     // this.search();
     if (loading) {
       NProgress.start();
     }
 
     // eslint-disable-next-line react/destructuring-assignment
-    this.props.search(query);
+    if (this.props.location) {
+      if (this.props.location.search) {
+        const { q } = queryString.parse(this.props.location.search);
+        if (q) {
+          const qstring = q.toString();
+          this.props.changeQuery(qstring);
+        }
+      }
+    }
+    this.props.search();
   }
 
   componentDidUpdate(prevProps: Props): void {
@@ -68,14 +80,14 @@ class IndexPage extends React.Component<Props, {}> {
     if (items) {
       return (
         <>
-          {items.map(item => {
+          {items.map((item, i) => {
             if (item.id.kind.match(/video/i)) {
-              return <Video key={item.id.videoId} video={item} />;
+              return <Video key={i.toString()} video={item} />;
             }
             if (item.id.kind.match(/list/i)) {
-              return <Playlist key={item.id.videoId} video={item} />;
+              return <Playlist key={i.toString()} video={item} />;
             }
-            return <Channel key={item.id.videoId} video={item} />;
+            return <Channel key={i.toString()} video={item} />;
           })}
         </>
       );
@@ -109,4 +121,4 @@ const mapStateTopProps = (state: CentralState): MapStateTopProps => {
   };
 };
 
-export default connect(mapStateTopProps, { search })(IndexPage);
+export default connect(mapStateTopProps, { search, changeQuery })(IndexPage);
